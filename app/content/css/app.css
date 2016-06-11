@@ -11,8 +11,11 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 400;
 }
 
+#main {
+  margin-top: 8em;
+}
+
 .home h1 {
-  margin-top: 5em;
   margin-bottom: 20px;
 }
 
