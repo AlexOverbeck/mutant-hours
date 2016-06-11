@@ -26,6 +26,7 @@
     vm.newMutant = new Mutant();
     vm.deleteMutant = deleteMutant;
     vm.sendText = sendText;
+    vm.toggleComplete = toggleComplete;
 
     function addMutant() {
       vm.mutants.$add(vm.newMutant);
@@ -44,6 +45,10 @@
       };
       fireTexts.push(newText);
       mutant.notified = true;
+      vm.mutants.$save(mutant);
+    }
+
+    function toggleComplete(mutant){
       vm.mutants.$save(mutant);
     }
   }
