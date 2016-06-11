@@ -5,14 +5,35 @@
   <div class="medium-3 small-6 columns">
     <input ng-model="vm.newMutant.phone" type="text" name="phone" placeholder="Phone #" required>
   </div>
-  <div class="medium-3 small-6 columns">
+  <div class="medium-4 small-8 columns">
     <input ng-model="vm.newMutant.topic" type="text" name="topic" placeholder="Topic" required>
   </div>
-  <div class="medium-3 small-6 columns">
+  <div class="medium-2 small-4 columns">
     <button type="submit" class="expanded button">Submit</button>
   </div>
 </form>
 
-<div class="small-12 columns" ng-repeat="mutant in vm.mutants">
-  {{ mutant.name }}<br>{{ mutant.phone }}<br>{{mutant.topic}}
+<div class="small-12 columns">
+  <table class="hover stack">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>Topic</th>
+        <th>Notified</th>
+        <th>Complete</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="mutant in vm.mutants">
+        <td>{{ mutant.name }}</td>
+        <td>{{ mutant.phone }}</td>
+        <td>{{ mutant.topic }}</td>
+        <td>{{ mutant.notified }}</td>
+        <td>{{ mutant.complete }}</td>
+        <td><button class="button success">Text</button><button class="button danger">Delete</button>
+      </tr>
+    </tbody>
+  </table>
 </div>
