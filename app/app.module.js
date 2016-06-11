@@ -10,6 +10,7 @@
 
     // Custom modules
     'app.home',
+    'app.mutantList'
   ]);
 
 })();
