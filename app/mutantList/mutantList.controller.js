@@ -11,6 +11,7 @@
     var vm = this;
 
     var fireMutants = new Firebase('https://mutant-school.firebaseio.com/mutants');
+    var fireTexts = new Firebase('https://mutant-school.firebaseio.com/texts');
 
     function Mutant() {
       this.name = '';
@@ -24,6 +25,7 @@
     vm.addMutant = addMutant;
     vm.newMutant = new Mutant();
     vm.deleteMutant = deleteMutant;
+    vm.sendText = sendText;
 
     function addMutant() {
       vm.mutants.$add(vm.newMutant);
@@ -32,6 +34,17 @@
 
     function deleteMutant(mutant) {
       vm.mutants.$remove(mutant);
+    }
+
+    function sendText(mutant) {
+      var newText = {
+        name: mutant.name,
+        phoneNumber: mutant.phone,
+        topic: mutant.topic
+      };
+      fireTexts.push(newText);
+      mutant.notified = true;
+      vm.mutants.$save(mutant);
     }
   }
 
