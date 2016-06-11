@@ -22,6 +22,7 @@
 
     function addMutant() {
       vm.mutants.push(vm.newMutant);
+      vm.newMutant = new Mutant();
     }
   }
 
