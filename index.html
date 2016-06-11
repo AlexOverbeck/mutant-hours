@@ -6,8 +6,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.2.3/foundation.min.css">
   </head>
   <body>
+    body
     <div class="row">
-      body
+      <ui-view></ui-view>
     </div>
 
     <!-- Third-party scripts -->
@@ -20,5 +21,9 @@
 
     <!-- Main app module -->
     <script src="app/app.module.js"></script>
+
+    <!-- Home module -->
+    <script src="app/home/home.module.js"></script>
+    <script src="app/home/config.route.js"></script>
   </body>
 </html>

@@ -2,10 +2,14 @@
   'use strict';
 
   angular.module('mutantApp', [
-    // Angular modules.
+    // Angular modules
     'ui.router',
 
-    // Third-party modules,
+    // Third-party modules
     'firebase',
+
+    // Custom modules
+    'app.home',
   ]);
+
 })();
