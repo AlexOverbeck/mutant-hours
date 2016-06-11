@@ -9,6 +9,11 @@
     var vm = this;
 
     vm.mutants = ['cyclops', 'rogue', 'wolverine'];
+    vm.addMutant = addMutant;
+
+    function addMutant() {
+      vm.mutants.push('professor x');
+    }
   }
 
 })();
