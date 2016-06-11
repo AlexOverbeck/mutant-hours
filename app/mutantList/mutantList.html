@@ -13,5 +13,6 @@
   </div>
 </form>
 
-{{ vm.newMutant }}
-{{ vm.mutants }}
+<div class="small-12 columns" ng-repeat="mutant in vm.mutants">
+  {{ mutant.name }}<br>{{ mutant.phone }}<br>{{mutant.topic}}
+</div>
