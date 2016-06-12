@@ -13,14 +13,6 @@
     var fireMutants = new Firebase(FIREBASE_URL + 'mutants');
     var fireTexts = new Firebase(FIREBASE_URL + 'texts');
 
-    function Mutant() {
-      this.name = '';
-      this.phone = '';
-      this.topic = '';
-      this.complete = false;
-      this.notified = false;
-    }
-
     vm.mutants = $firebaseArray(fireMutants);
     vm.addMutant = addMutant;
     vm.newMutant = new mutantService.Mutant();
