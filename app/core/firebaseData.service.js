@@ -8,7 +8,11 @@
   firebaseDataService.$inject = ['FIREBASE_URL'];
 
   function firebaseDataService(FIREBASE_URL) {
-    var service = {};
+    var root = new Firebase(FIREBASE_URL);
+
+    var service = {
+      root: root
+    };
 
     return service;
   }
