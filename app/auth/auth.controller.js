@@ -5,10 +5,16 @@
     .module('app.auth')
     .controller('AuthController', AuthController);
 
-  AuthController.$inject = [];
+  AuthController.$inject = ['$firebaseAuth'];
 
-  function AuthController() {
-    
+  function AuthController($firebaseAuth) {
+    var vm = this;
+
+    vm.register = register;
+
+    function register(user) {
+      
+    }
   }
 
 })();
