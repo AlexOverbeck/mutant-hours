@@ -14,6 +14,12 @@
       controller: 'AuthController',
       controllerAs: 'vm'
     });
+    $stateProvider.state('login', {
+      url: '/login',
+      templateUrl: 'app/auth/login.html',
+      controller: 'AuthController',
+      controllerAs: 'vm'
+    });
   }
 
 })();
