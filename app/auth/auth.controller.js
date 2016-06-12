@@ -22,8 +22,8 @@
 
     function register(user) {
       return auth.$createUser(user)
-        .then(function(user) {
-          console.log(user);
+        .then(function() {
+          vm.login(user);
         })
         .catch(function(error) {
           console.log(error);
@@ -32,8 +32,8 @@
 
     function login(user) {
       return auth.$authWithPassword(user)
-        .then(function(user) {
-          console.log(user);
+        .then(function(loggedInUser) {
+          console.log(loggedInUser);
         })
         .catch(function(error) {
           console.log(error);
