@@ -5,9 +5,12 @@
     .module('app.core')
     .factory('mutantService', mutantService);
 
-  function mutantService() {
+  mutantService.$inject = ['$firebaseArray', 'firebaseDataService'];
+
+  function mutantService($firebaseArray, firebaseDataService) {
     var service = {
-      Mutant: Mutant
+      Mutant: Mutant,
+      mutants: $firebaseArray(firebaseDataService.root.child('mutants'))
     };
 
     return service;
