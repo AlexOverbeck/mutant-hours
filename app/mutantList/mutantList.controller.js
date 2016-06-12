@@ -5,9 +5,9 @@
     .module('app.mutantList')
     .controller('MutantListController', MutantListController);
 
-  MutantListController.$inject = ['$firebaseArray', 'FIREBASE_URL'];
+  MutantListController.$inject = ['$firebaseArray', 'FIREBASE_URL', 'mutantService'];
 
-  function MutantListController($firebaseArray, FIREBASE_URL) {
+  function MutantListController($firebaseArray, FIREBASE_URL, mutantService) {
     var vm = this;
 
     var fireMutants = new Firebase(FIREBASE_URL + 'mutants');
@@ -23,14 +23,14 @@
 
     vm.mutants = $firebaseArray(fireMutants);
     vm.addMutant = addMutant;
-    vm.newMutant = new Mutant();
+    vm.newMutant = new mutantService.Mutant();
     vm.deleteMutant = deleteMutant;
     vm.sendText = sendText;
     vm.toggleComplete = toggleComplete;
 
     function addMutant() {
       vm.mutants.$add(vm.newMutant);
-      vm.newMutant = new Mutant();
+      vm.newMutant = new mutantService.Mutant();
     }
 
     function deleteMutant(mutant) {
