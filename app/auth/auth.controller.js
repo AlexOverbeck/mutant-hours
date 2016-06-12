@@ -5,11 +5,11 @@
     .module('app.auth')
     .controller('AuthController', AuthController);
 
-  AuthController.$inject = ['$firebaseAuth', '$state'];
+  AuthController.$inject = ['$firebaseAuth', '$state', 'FIREBASE_URL'];
 
-  function AuthController($firebaseAuth, $state) {
+  function AuthController($firebaseAuth, $state, FIREBASE_URL) {
     var vm = this;
-    var firebaseRef = new Firebase('https://mutant-school.firebaseio.com/');
+    var firebaseRef = new Firebase(FIREBASE_URL);
     var auth = $firebaseAuth(firebaseRef);
 
     vm.user = {
