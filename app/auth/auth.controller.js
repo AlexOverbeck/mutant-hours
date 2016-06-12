@@ -5,9 +5,9 @@
     .module('app.auth')
     .controller('AuthController', AuthController);
 
-  AuthController.$inject = ['$firebaseAuth'];
+  AuthController.$inject = ['$firebaseAuth', '$state'];
 
-  function AuthController($firebaseAuth) {
+  function AuthController($firebaseAuth, $state) {
     var vm = this;
     var firebaseRef = new Firebase('https://mutant-school.firebaseio.com/');
     var auth = $firebaseAuth(firebaseRef);
@@ -34,7 +34,7 @@
     function login(user) {
       return auth.$authWithPassword(user)
         .then(function(loggedInUser) {
-          console.log(loggedInUser);
+          $state.go('mutantList')
         })
         .catch(function(error) {
           console.log(error);
@@ -42,8 +42,8 @@
     }
 
     function logout() {
-      console.log('logging out');
       auth.$unauth();
+      $state.go('home');
     }
   }
 
