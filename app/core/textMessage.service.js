@@ -5,7 +5,9 @@
     .module('app.core')
     .factory('textMessageService', textMessageService);
 
-  function textMessageService() {
+  textMessageService.$inject = ['firebaseDataService'];
+
+  function textMessageService(firebaseDataService) {
     var service = {
       sendText: sendText
     };
@@ -14,7 +16,7 @@
 
     /////////////
 
-    function sendText(mutant) {
+    function sendText(mutant, mutants) {
       var newText = {
         name: mutant.name,
         phoneNumber: mutant.phone,
@@ -22,7 +24,7 @@
       };
       firebaseDataService.texts.push(newText);
       mutant.notified = true;
-      vm.mutants.$save(mutant);
+      mutants.$save(mutant);
     }
   }
 })();
