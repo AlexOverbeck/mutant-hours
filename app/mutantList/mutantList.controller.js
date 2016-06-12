@@ -5,12 +5,10 @@
     .module('app.mutantList')
     .controller('MutantListController', MutantListController);
 
-  MutantListController.$inject = ['FIREBASE_URL', 'mutantService'];
+  MutantListController.$inject = ['firebaseDataService', 'mutantService'];
 
-  function MutantListController(FIREBASE_URL, mutantService) {
+  function MutantListController(firebaseDataService, mutantService) {
     var vm = this;
-
-    var fireTexts = new Firebase(FIREBASE_URL + 'texts');
 
     vm.mutants = mutantService.mutants;
     vm.addMutant = addMutant;
@@ -34,7 +32,7 @@
         phoneNumber: mutant.phone,
         topic: mutant.topic
       };
-      fireTexts.push(newText);
+      firebaseDataService.texts.push(newText);
       mutant.notified = true;
       vm.mutants.$save(mutant);
     }

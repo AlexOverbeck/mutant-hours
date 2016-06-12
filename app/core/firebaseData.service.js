@@ -11,7 +11,8 @@
     var root = new Firebase(FIREBASE_URL);
 
     var service = {
-      root: root
+      root: root,
+      texts: root.child('texts')
     };
 
     return service;
