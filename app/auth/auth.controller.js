@@ -18,9 +18,20 @@
     };
 
     vm.register = register;
+    vm.login = login;
 
     function register(user) {
       return auth.$createUser(user)
+        .then(function(user) {
+          console.log(user);
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+    }
+
+    function login(user) {
+      return auth.$authWithPassword(user)
         .then(function(user) {
           console.log(user);
         })
