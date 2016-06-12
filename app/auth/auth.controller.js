@@ -20,7 +20,13 @@
     vm.register = register;
 
     function register(user) {
-      return auth.$createUser(user);
+      return auth.$createUser(user)
+        .then(function(user) {
+          console.log(user);
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
     }
   }
 
