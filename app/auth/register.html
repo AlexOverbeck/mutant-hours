@@ -1,14 +1,14 @@
 <div class="row">
   <div class="medium-6 medium-centered large-4 large-centered columns">
 
-    <form>
+    <form ng-submit="vm.register()">
       <div class="row column" id="log-in-form">
         <h4 class="text-center">Sign up</h4>
         <label>Email
-          <input type="text" placeholder="somebody@example.com" required autofocus>
+          <input ng-model="vm.user.email" type="text" placeholder="somebody@example.com" required autofocus>
         </label>
         <label>Password
-          <input type="text" placeholder="Password" required>
+          <input ng-model="vm.user.password" type="text" placeholder="Password" required>
         </label>
         <p><a type="submit" class="button expanded">Sign up</a></p>
       </div>
