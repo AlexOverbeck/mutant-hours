@@ -15,7 +15,7 @@
     vm.user = {
       email: '',
       password: ''
-    }
+    };
 
     vm.register = register;
 
