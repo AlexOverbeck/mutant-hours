@@ -5,13 +5,13 @@
     .module('app.mutantList')
     .controller('MutantListController', MutantListController);
 
-  MutantListController.$inject = ['$firebaseArray'];
+  MutantListController.$inject = ['$firebaseArray', 'FIREBASE_URL'];
 
-  function MutantListController($firebaseArray) {
+  function MutantListController($firebaseArray, FIREBASE_URL) {
     var vm = this;
 
-    var fireMutants = new Firebase('https://mutant-school.firebaseio.com/mutants');
-    var fireTexts = new Firebase('https://mutant-school.firebaseio.com/texts');
+    var fireMutants = new Firebase(FIREBASE_URL + 'mutants');
+    var fireTexts = new Firebase(FIREBASE_URL + 'texts');
 
     function Mutant() {
       this.name = '';
