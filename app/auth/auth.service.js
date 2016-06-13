@@ -11,7 +11,8 @@
     var auth = $firebaseAuth(firebaseDataService.root);
 
     var service = {
-      register: register
+      register: register,
+      login: login
     };
 
     return service;
@@ -20,6 +21,10 @@
 
     function register(user) {
       return auth.$createUser(user);
+    }
+
+    function login(user) {
+      return auth.$authWithPassword(user);
     }
   }
 })();

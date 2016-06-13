@@ -32,7 +32,7 @@
     }
 
     function login(user) {
-      return auth.$authWithPassword(user)
+      return authService.login(user)
         .then(function(loggedInUser) {
           $state.go('mutantList')
         })
