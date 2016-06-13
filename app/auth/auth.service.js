@@ -30,11 +30,11 @@
     }
 
     function logout() {
-      auth.$unauth;
+      auth.$unauth();
     }
 
     function isLoggedIn() {
-      return auth.$getAuth;
+      return auth.$getAuth();
     }
   }
 })();
