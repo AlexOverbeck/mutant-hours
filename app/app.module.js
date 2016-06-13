@@ -12,7 +12,8 @@
     'app.home',
     'app.mutantList',
     'app.auth',
-    'app.core'
+    'app.core',
+    'app.layout'
   ]);
 
 })();
