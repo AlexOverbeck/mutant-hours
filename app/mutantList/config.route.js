@@ -22,12 +22,6 @@
   resolveUser.$inject = ['authService'];
 
   function resolveUser(authService) {
-    return authService.auth.$requireAuth()
-      .then(function(user) {
-        console.log(user);
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
+    return authService.auth.$requireAuth();
   }
 })();
