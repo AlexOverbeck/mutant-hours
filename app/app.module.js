@@ -14,6 +14,13 @@
     'app.auth',
     'app.core',
     'app.layout'
-  ]);
+  ])
+  .config(configFunction);
+
+  configFunction.$inject = ['$urlRouterProvider']
+
+  function configFunction($urlRouterProvider) {
+    $urlRouterProvider.otherwise('/');
+  }
 
 })();
