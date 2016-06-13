@@ -5,12 +5,10 @@
     .module('app.auth')
     .controller('AuthController', AuthController);
 
-  AuthController.$inject = ['$firebaseAuth', '$state', 'FIREBASE_URL', 'authService'];
+  AuthController.$inject = ['$state', 'authService'];
 
-  function AuthController($firebaseAuth, $state, FIREBASE_URL, authService) {
+  function AuthController($state, authService) {
     var vm = this;
-    var firebaseRef = new Firebase(FIREBASE_URL);
-    var auth = $firebaseAuth(firebaseRef);
 
     vm.user = {
       email: '',
