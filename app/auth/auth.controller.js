@@ -5,9 +5,9 @@
     .module('app.auth')
     .controller('AuthController', AuthController);
 
-  AuthController.$inject = ['$firebaseAuth', '$state', 'FIREBASE_URL'];
+  AuthController.$inject = ['$firebaseAuth', '$state', 'FIREBASE_URL', 'authService'];
 
-  function AuthController($firebaseAuth, $state, FIREBASE_URL) {
+  function AuthController($firebaseAuth, $state, FIREBASE_URL, authService) {
     var vm = this;
     var firebaseRef = new Firebase(FIREBASE_URL);
     var auth = $firebaseAuth(firebaseRef);
@@ -22,7 +22,7 @@
     vm.logout = logout;
 
     function register(user) {
-      return auth.$createUser(user)
+      return authService.register(user)
         .then(function() {
           vm.login(user);
         })
