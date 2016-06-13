@@ -11,6 +11,7 @@
     var auth = $firebaseAuth(firebaseDataService.root);
 
     var service = {
+      auth: auth,
       register: register,
       login: login,
       logout: logout,
