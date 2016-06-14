@@ -8,7 +8,16 @@
   function xtMutantForm() {
     return {
       templateUrl: 'app/mutantList/directives/mutantForm.html',
-      restrict: 'E'
+      restrict: 'E',
+      controller: MutantFormController,
+      controllerAs: 'vm',
+      scope: {}
     };
+  }
+
+  MutantFormController.$inject = ['mutantService'];
+
+  function MutantFormController(mutantService) {
+
   }
 })();
