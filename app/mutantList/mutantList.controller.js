@@ -11,16 +11,9 @@
     var vm = this;
 
     vm.mutants = mutantService.mutantsByUser(user.uid);
-    vm.addMutant = addMutant;
-    vm.newMutant = new mutantService.Mutant();
     vm.deleteMutant = deleteMutant;
     vm.sendText = sendText;
     vm.toggleComplete = toggleComplete;
-
-    function addMutant() {
-      vm.mutants.$add(vm.newMutant);
-      vm.newMutant = new mutantService.Mutant();
-    }
 
     function deleteMutant(mutant) {
       vm.mutants.$remove(mutant);
