@@ -11,7 +11,10 @@
       restrict: 'E',
       controller: MutantFormController,
       controllerAs: 'vm',
-      scope: {}
+      bindToController: true,
+      scope: {
+        mutants: '='
+      }
     };
   }
 
@@ -24,7 +27,6 @@
     vm.newMutant = new mutantService.Mutant();
 
     function addMutant() {
-      // don't have reference to this firebaseArray yet
       vm.mutants.$add(vm.newMutant);
       vm.newMutant = new mutantService.Mutant();
     }
