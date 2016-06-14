@@ -18,6 +18,15 @@
   MutantFormController.$inject = ['mutantService'];
 
   function MutantFormController(mutantService) {
+    var vm = this;
 
+    vm.addMutant = addMutant;
+    vm.newMutant = new mutantService.Mutant();
+
+    function addMutant() {
+      // don't have reference to this firebaseArray yet
+      vm.mutants.$add(vm.newMutant);
+      vm.newMutant = new mutantService.Mutant();
+    }
   }
 })();
