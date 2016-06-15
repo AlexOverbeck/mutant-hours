@@ -13,7 +13,7 @@
       controllerAs: 'vm',
       bindToController: true,
       scope: {
-        
+        error: '='
       }
     };
   }
