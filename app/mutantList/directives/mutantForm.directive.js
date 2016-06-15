@@ -31,4 +31,5 @@
       vm.newMutant = new mutantService.Mutant();
     }
   }
+  
 })();
