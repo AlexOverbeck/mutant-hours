@@ -3,7 +3,7 @@
 
     <form name="authForm" ng-submit="authForm.$valid" novalidate>
       <div class="row column" id="log-in-form">
-        <h4 class="text-center"></h4>
+        <h4 class="text-center" ng-bind="vm.formName"></h4>
 
         <!-- Server authentication errors -->
         <div class="alert callout small" ng-show="vm.error" ng-bind="vm.error"></div>
@@ -32,7 +32,7 @@
         <!-- Password error -->
         <div class="alert callout small" ng-show="authForm.$submitted && authForm.password.$error.required">Password required</div>
 
-        <p><button type="submit" class="button expanded"></button></p>
+        <p><button type="submit" class="button expanded" ng-bind="vm.formName"></button></p>
       </div>
     </form>
 
