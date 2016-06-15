@@ -8,21 +8,23 @@
         <!-- Server authentication errors -->
         <div class="alert callout small" ng-show="vm.error" ng-bind="vm.error"></div>
 
-        <!-- Email inputs -->
+        <!-- Email input -->
         <label>Email
           <input ng-model="vm.user.email" type="email" name="email" placeholder="somebody@example.com" required autofocus>
         </label>
 
         <!-- Email error -->
-        <div class="alert callout small" ng-show="authForm.$submitted">
-          <p ng-show="authForm.email.$error.required">Email required</p>
-          <p ng-show="authForm.email.$error.email">Invalid email</p>
-        </div>
+        <div class="alert callout small" ng-show="authForm.$submitted && authForm.email.$error.required">Email required</div>
+        <div class="alert callout small" ng-show="authForm.$submitted && authForm.email.$error.email">Invalid email</div>
 
-
+        <!-- Password input -->
         <label>Password
           <input ng-model="vm.user.password" type="password" name="password" placeholder="Password" required>
         </label>
+
+        <!-- Password error -->
+        <div class="alert callout small" ng-show="authForm.$submitted && authForm.password.$error.required">Password required</div>
+
         <p><button type="submit" class="button expanded">Log in</button></p>
       </div>
     </form>
