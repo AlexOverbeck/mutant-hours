@@ -1,9 +1,9 @@
 <div class="row">
   <div class="medium-6 medium-centered large-4 large-centered columns">
 
-    <form name="authForm" ng-submit="authForm.$valid && vm.login(vm.user)" novalidate>
+    <form name="authForm" ng-submit="authForm.$valid" novalidate>
       <div class="row column" id="log-in-form">
-        <h4 class="text-center">Log in</h4>
+        <h4 class="text-center"></h4>
 
         <!-- Server authentication errors -->
         <div class="alert callout small" ng-show="vm.error" ng-bind="vm.error"></div>
@@ -32,7 +32,7 @@
         <!-- Password error -->
         <div class="alert callout small" ng-show="authForm.$submitted && authForm.password.$error.required">Password required</div>
 
-        <p><button type="submit" class="button expanded">Log in</button></p>
+        <p><button type="submit" class="button expanded"></button></p>
       </div>
     </form>
 
